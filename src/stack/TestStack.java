@@ -48,8 +48,59 @@ public class TestStack {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		StackReferenceBased stack = new StackReferenceBased();
-		stack.displayStack();
 		Scanner scanner = new Scanner(System.in);
+		int choice = 0;
+		
+		while(choice != 6) {
+			printMenu();
+			System.out.print("Enter your choice");
+			choice = scanner.nextInt();
+			scanner.nextLine(); //Im training for coding assessments at the moment and i learned that if you dont use this when messing with reading ints before strings you can get into a lot of trouble
+			
+			if (choice == 1) {
+				System.out.print("Please enter your string: ");
+				String input = scanner.nextLine();
+				stack.push(input);
+			}
+			else if (choice == 2) {
+				if(stack.isEmpty())
+					System.out.println("Stack is empty");
+				else
+					System.out.println("Pop complete" + stack.pop());
+			}
+			else if (choice == 3) {
+				if(stack.isEmpty())
+					System.out.println("Stack is empty");
+				else
+					System.out.println("The top of the stack is " + stack.peek());
+			}
+			else if (choice == 4) {
+				if(stack.isEmpty())
+					System.out.println("Stack is empty");
+				else
+					stack.popAll();
+			}
+			else if (choice == 5) {
+				System.out.println("Enter a String");
+				String balanceCheck = scanner.nextLine();
+				
+				if(isBalanced(balanceCheck)) {
+					System.out.println("The brackets are balanced");
+				}
+				else 
+					System.out.println("The brackets arent balanced");
+				
+			}
+			else if (choice == 6) {
+				System.out.println("Thank you, bye");
+			}
+			else
+				System.out.println("Please enter a valid option");
+			if (choice >= 1 && choice <= 6) {
+				System.out.println("The current stack");
+				stack.displayStack();
+			}
+		}
 	}
 
 }
