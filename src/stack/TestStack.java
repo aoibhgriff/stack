@@ -1,6 +1,18 @@
 package stack;
 
+import java.util.Scanner;
+
 public class TestStack {
+	public static void printMenu() {
+		System.out.println("Welcome to StackTest! Please select a number from the list.");
+		System.out.println("");
+		System.out.println("1. Push a string on to the stack");
+		System.out.println("2. Pop a string from the stack");
+		System.out.println("3. Peek at the top of the stack");
+		System.out.println("4. Empty the stack");
+		System.out.println("5. Check if a string has balanced brackets.");
+		System.out.println("6. Quit the program");
+	}
 	
 	public static boolean isBalanced(String s) {
 		StackReferenceBased stack = new StackReferenceBased();
@@ -37,6 +49,7 @@ public class TestStack {
 		// TODO Auto-generated method stub
 		StackReferenceBased stack = new StackReferenceBased();
 		stack.displayStack();
+		Scanner scanner = new Scanner(System.in);
 	}
 
 }
