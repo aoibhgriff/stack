@@ -71,7 +71,7 @@ public class StackReferenceBased implements StackInterface
 	  Node curr = top;
 	  
 	  while (curr != null) {
-		  System.out.println(curr);
+		  System.out.println(curr.getItem());
 		  curr = curr.getNext();
 	  }
   }
