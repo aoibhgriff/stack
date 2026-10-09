@@ -67,5 +67,12 @@ public class StackReferenceBased implements StackInterface
 //============================================================================
 //============================================================================
 //============================================================================
-
+  public void displayStack() {
+	  Node curr = top;
+	  
+	  while (curr != null) {
+		  System.out.println(curr);
+		  curr = curr.getNext();
+	  }
+  }
 }  // end StackReferenceBased
